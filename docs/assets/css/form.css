@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 260px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 50vh;
+  padding: 2rem;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.box {
+  display: flex;
+  padding: 0.2rem;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  align-items: center;
+}
+.box img {
+  height: 25px;
+}
+.box input {
+  height: 2rem;
+  font-family: Fira Code;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+.sign-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 1rem;
+}
+.sign-btn input {
+  padding: 0.9rem;
+  width: 200px;
+  border-radius: 20px;
+  font-family: Fira Code;
+  border: 1px solid black;
+}
+.sign-btn a {
+  text-decoration: none;
+  color: black;
+}
+.sign-btn input:hover {
+  background-color: black;
+  color: white;
+}
+.sign-btn a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+.reg {
+  display: flex;
+  gap: 10px;
+}

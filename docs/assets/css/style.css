@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Fira Code;
+  background: #202c39;
+}
+#heading-1 {
+  text-align: center;
+  margin: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+#heading-2 {
+  text-align: center;
+  margin: 20px;
+  font-family: Fira Code;
+  color: white;
+}
+
+.doubleCards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 2rem;
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
+}
+.card img {
+  height: 100px;
+}
+#voters {
+  background: #777da7;
+}
+#voted {
+  background: #f49390;
+}
+.currencies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.sep {
+  display: flex;
+  gap: 30rem;
+}
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.currencies img {
+  height: 55px;
+}
+
+.currencies button {
+  width: 150px;
+  padding: 0.7rem;
+  font-family: Jetbrains Mono;
+  border-radius: 20px;
+  border: none;
+  background: #4ce0d2;
+  font-weight: bold;
+  font-size: 15px;
+}

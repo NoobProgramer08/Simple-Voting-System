@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Voting System</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header><h2 id="heading-1">Vote your preferred currency</h2></header>
+    <div class="doubleCards">
+      <div class="card" id="voters">
+        <span class="desc">
+          <p>Total Users</p>
+          <img src="assets/images/voters.png" alt="" />
+        </span>
+        <p>0</p>
+      </div>
+      <div class="card" id="voted">
+        <span class="desc">
+          <p>Voted</p>
+          <img src="assets/images/voter.png" alt="" />
+        </span>
+        <p>0</p>
+      </div>
+    </div>
+    <h2 id="heading-2">Currencies</h2>
+    <div class="currencies">
+      <div class="sep">
+        <div class="currency">
+          <span><img src="assets/images/bitcoin.png" alt="" /></span
+          ><button id="btc" class="btn">Vote</button>
+        </div>
+        <div class="currency">
+          <span><img src="assets/images/ethereum.png" alt="" /></span
+          ><button id="eth" class="btn">Vote</button>
+        </div>
+      </div>
+
+      <div class="sep">
+        <div class="currency">
+          <span><img src="assets/images/tether.png" alt="" /></span
+          ><button id="tht" class="btn">Vote</button>
+        </div>
+        <div class="currency">
+          <span><img src="assets/images/xrp.png" alt="" /></span
+          ><button id="xrp" class="btn">Vote</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
