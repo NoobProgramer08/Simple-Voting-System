@@ -3,15 +3,17 @@ const buttons = Array.from(document.querySelectorAll(".btn"));
 
 let voted = false;
 buttons.forEach((button) => button.addEventListener('click',getCurrency));
-document.addEventListener('DOMContentLoaded', () =>
-     { (getLogged()) ? voted = true : ""; (voted) ? disableButtons() : "" }
+document.addEventListener('DOMContentLoaded', () => {
+    (getLogged()) ? voted = true : ""; (voted) ? disableButtons() : "";
+
+    }
     
-   );
+);
 
 
 
 function getCurrency(event){
-    const target = event.target.id;
+    const target = event.target.id; 
     handleVote(target);
 
     

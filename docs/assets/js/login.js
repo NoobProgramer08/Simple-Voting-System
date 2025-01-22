@@ -26,14 +26,13 @@ function validateUser(e){
 
     }else{
         if(parsed.email == email.value && parsed.password == password.value){
-          logIn();
+            logIn();
 
         }else{
             showErrorMessage();
 
         }
     }    
-  
 }
 
 function logIn(){
@@ -45,7 +44,7 @@ function showErrorMessage(){
         title: "Account not found !!",
         icon: "error",
         draggable: true
-        }).then((button) =>{
+        }).then((button) => {
             if(button.isConfirmed){
                 return;
             }
