@@ -1,4 +1,4 @@
-Simple Voting System
+Simple Voting System With LocalStorage
 Purpose: Count votes and display results.
 
 Features:

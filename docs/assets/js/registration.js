@@ -1,9 +1,11 @@
 const email = document.querySelector("#newEmail");
 const password = document.querySelector("#newPassword");
 const btn = document.querySelector("#register");
+const signIn = document.querySelector("#signIn");
 
 
 btn.addEventListener('click',validateUser);
+signIn.addEventListener('click',transferWindow);
 
 
 
@@ -74,4 +76,8 @@ function showSuccess(){
           `
         }
       });
+}
+
+function transferWindow(){
+  window.location = "/docs/index.html"
 }

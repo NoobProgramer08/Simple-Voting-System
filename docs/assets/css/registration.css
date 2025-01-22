@@ -79,3 +79,11 @@ button:hover {
 
   font-size: 12px;
 }
+#signIn {
+  text-decoration: none;
+  color: white;
+}
+#signIn:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}

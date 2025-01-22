@@ -1,10 +1,12 @@
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const btn = document.querySelector("#btn");
+const register = document.querySelector("#register");
 let voted = false;
 
 
 btn.addEventListener('click',validateUser);
+register.addEventListener('click',transferWindow);
 
 function validateUser(e){
     e.preventDefault();
@@ -68,4 +70,8 @@ function tempLogIn(voted){
     }
 
     localStorage.setItem('logged',JSON.stringify(loggedIn));
+}
+
+function transferWindow(){
+    window.location = "/docs/register.html";
 }

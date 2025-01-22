@@ -1,16 +1,14 @@
 const buttons = Array.from(document.querySelectorAll(".btn"));
-
-
 let voted = false;
+
 buttons.forEach((button) => button.addEventListener('click',getCurrency));
+
 document.addEventListener('DOMContentLoaded', () => {
+    countUsers();
     (getLogged()) ? voted = true : ""; (voted) ? disableButtons() : "";
 
     }
-    
 );
-
-
 
 function getCurrency(event){
     const target = event.target.id; 
@@ -99,5 +97,62 @@ function updateVoted(){
         return user;
     });
 
-   localStorage.setItem("User",JSON.stringify(changed));
+    localStorage.setItem("User",JSON.stringify(changed));
+
+    updateStatus();
+}
+
+
+function countUsers(){
+    const getUsers = localStorage.getItem("User");
+    const parsedUsers = JSON.parse(getUsers);
+    
+    const userCount = parsedUsers.reduce((acc,item) => {
+        acc++
+        return  acc;
+    },0);
+    
+    document.querySelector("#totalUsers").textContent = userCount;
+
+    countVoted(parsedUsers);
+
+
+}
+
+function countVoted(users){
+
+    if(users.length != undefined){
+        const voted =   users.reduce((acc,user) => {
+            
+            if(user.voted == true){
+                acc++;
+        
+
+            }
+            return acc;
+        },0)
+            
+        
+        document.querySelector("#doneVote").textContent = voted;
+    }else{
+        document.querySelector("#doneVote").textContent = 1;
+    }
+    
+
+}
+
+function updateStatus(){
+    const getItems = localStorage.getItem("logged");
+    const parsed = JSON.parse(getItems);
+
+    const updated = {
+        email:parsed.email,
+        password:parsed.password,
+        voted:true,
+    }
+
+    localStorage.setItem("logged",JSON.stringify(updated));
+    
+    
+
 }
