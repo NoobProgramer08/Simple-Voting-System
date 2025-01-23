@@ -21,8 +21,6 @@ function getLogged(){
     const getItems = localStorage.getItem("logged");
     const parsed = JSON.parse(getItems);
 
-    console.log(parsed.voted);
-
     return parsed.voted;
 }
 
