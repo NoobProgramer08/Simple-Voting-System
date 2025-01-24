@@ -79,5 +79,5 @@ function showSuccess(){
 }
 
 function transferWindow(){
-  window.location = "/docs/index.html"
+  window.location = "/docs//assets/pages/index.html"
 }

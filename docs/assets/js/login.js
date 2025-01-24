@@ -58,7 +58,7 @@ function showMessage(){
         icon: "success",
         draggable: true
     }).then((button) => {
-        (button.isConfirmed) ? window.location = "/docs/client.html" :"";
+        (button.isConfirmed) ? window.location = "/docs/assets/pages/client.html" :"";
     });
 }
 
@@ -73,5 +73,5 @@ function tempLogIn(voted){
 }
 
 function transferWindow(){
-    window.location = "/docs/register.html";
+    window.location = "/docs/assets/pages/register.html";
 }
