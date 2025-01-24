@@ -49,12 +49,31 @@ function getPreviousVote(currency,votes){
 }
 
 function addVote(currency,votes){
-    const newVote = {
+    let recentVotes = [];
+    const newVote  = {
         currency:currency,
-        voteCount:votes+1,
+        vote:votes+1,
+    }
+    
+    if(localStorage.getItem('Votes') != undefined){
+        const getVotes = localStorage.getItem('Votes');
+        const parseVotes = JSON.parse(getVotes);
+
+        if(parseVotes.length != null){
+            parseVotes.forEac((element) => {
+                recentVotes.push(element);
+                
+            });
+            recentVotes.push(newVote);
+            localStorage.setItem('Votes',JSON.stringify(votes));
+
+        }
+
+    }else{
+        localStorage.setItem('Votes',JSON.stringify(newVote));
     }
 
-    localStorage.setItem(`${currency}`,JSON.stringify(newVote));
+    
 
     
     Swal.fire({

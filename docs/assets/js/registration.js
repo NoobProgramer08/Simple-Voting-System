@@ -58,8 +58,7 @@ function getUsers(users){
 
 function showSuccess(){
     
-
-   Swal.fire({
+    Swal.fire({
         title: "Registration Successfull",
         showClass: {
           popup: `
@@ -79,5 +78,5 @@ function showSuccess(){
 }
 
 function transferWindow(){
-  window.location = "/docs//assets/pages/index.html"
+  window.location = "/docs/index.html"
 }

@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #e7ecef;
+}
+table {
+  width: 70vw;
+}
+header {
+  margin-top: 30px;
+  font-family: Kanit;
+}
+table {
+  font-family: Kanit;
+}
+#head {
+  background-color: #1f487e;
+  color: white;
+}
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.overall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+#noOfVotes {
+  width: 100px;
+}

@@ -10,11 +10,17 @@ register.addEventListener('click',transferWindow);
 
 function validateUser(e){
     e.preventDefault();
+    
     const users = localStorage.getItem("User");
     const parsed = JSON.parse(users);
+   
     if(localStorage.getItem("User") != undefined){
         
         parsed.forEach(element => {
+            console.log(email.value);
+            console.log(element.email);
+            console.log(password.value);
+            console.log(element.password);
             if(element.email == email.value && element.password == password.value){
                 voted = element.voted;
                 tempLogIn(voted);
@@ -23,11 +29,10 @@ function validateUser(e){
             }
         }); 
 
-
-        
-
     }else{
+        
         if(parsed.email == email.value && parsed.password == password.value){
+           
             logIn();
 
         }else{
@@ -38,6 +43,7 @@ function validateUser(e){
 }
 
 function logIn(){
+   
     showMessage();
 
 }
@@ -53,6 +59,7 @@ function showErrorMessage(){
         });
 }
 function showMessage(){
+    console.log("Logged in");
     Swal.fire({
         title: "Logged In !!",
         icon: "success",
