@@ -1,7 +1,9 @@
 const buttons = Array.from(document.querySelectorAll(".btn"));
+const signOut = document.querySelector("#signOut");
 let voted = false;
 
 buttons.forEach((button) => button.addEventListener('click',getCurrency));
+signOut.addEventListener('click',logOut);
 
 document.addEventListener('DOMContentLoaded', () => {
     countUsers();
@@ -13,9 +15,48 @@ document.addEventListener('DOMContentLoaded', () => {
 function getCurrency(event){
     const target = event.target.id; 
     handleVote(target);
-
     
 }
+
+function logOut(){
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, log me out!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire({
+            title: "Success!",
+            text: "You have been logged out successfully",
+            icon: "success"
+            }).then((result) => {
+                result.isConfirmed ?  window.location = "/docs/index.html" : "";
+            });
+            
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "You choose to stay on page",
+            icon: "success"
+        });
+        }
+        });
+    
+}
+
 
 function getLogged(){
     const getItems = localStorage.getItem("logged");
@@ -58,18 +99,26 @@ function addVote(currency,votes){
     if(localStorage.getItem('Votes') != undefined){
         const getVotes = localStorage.getItem('Votes');
         const parseVotes = JSON.parse(getVotes);
-
-        if(parseVotes.length != null){
-            parseVotes.forEac((element) => {
+        
+    
+        
+        if(parseVotes.length != undefined){
+            parseVotes.forEach((element) => {
                 recentVotes.push(element);
                 
             });
+            
             recentVotes.push(newVote);
-            localStorage.setItem('Votes',JSON.stringify(votes));
+            localStorage.setItem('Votes',JSON.stringify(recentVotes));
 
+        }else{
+            recentVotes.push(parseVotes);
+            recentVotes.push(newVote);
+            localStorage.setItem('Votes',JSON.stringify(recentVotes));
         }
 
     }else{
+        console.log('Else');
         localStorage.setItem('Votes',JSON.stringify(newVote));
     }
 

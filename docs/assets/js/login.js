@@ -5,45 +5,78 @@ const register = document.querySelector("#register");
 let voted = false;
 
 
-btn.addEventListener('click',validateUser);
+
+btn.addEventListener('click',checkBlank);
 register.addEventListener('click',transferWindow);
 
-function validateUser(e){
-    e.preventDefault();
-    
+
+function checkBlank(){
+    if(email.value === "" || password.value === ""){
+        Swal.fire(({
+            icon:"error",
+            text:"Please dont leave any blank details",
+        }));
+
+    }else{
+        validateUser();
+    }
+}
+
+
+
+function validateUser(){
+
     const users = localStorage.getItem("User");
-    const parsed = JSON.parse(users);
-   
-    if(localStorage.getItem("User") != undefined){
+    let parsed = "";
+    try{
+    parsed = JSON.parse(users);
         
+    }catch(error){
+        showErrorMessage();
+
+    }
+    
+    let found = false;
+    
+    if(localStorage.getItem("User") != undefined){
         parsed.forEach(element => {
-            console.log(email.value);
-            console.log(element.email);
-            console.log(password.value);
-            console.log(element.password);
             if(element.email == email.value && element.password == password.value){
                 voted = element.voted;
+                found = true;
                 tempLogIn(voted);
                 logIn();
                 return;
             }
         }); 
 
-    }else{
-        
-        if(parsed.email == email.value && parsed.password == password.value){
-           
-            logIn();
-
-        }else{
-            showErrorMessage();
+        if(!found){
+            Swal.fire({
+                icon:"error",
+                title:"Error",
+                text:"Account not found!!"
+            });
 
         }
+
+    }else{
+        if(parsed === null){
+            showErrorMessage();
+
+        }else{
+            if(parsed.email == email.value && parsed.password == password.value){
+                logIn();
+    
+            }else{
+                showErrorMessage();
+    
+            }
+
+        }
+        
     }    
 }
 
 function logIn(){
-   
     showMessage();
 
 }

@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: Fira Code;
+  font-family: Kanit;
   background: #202c39;
 }
 #heading-1 {
@@ -33,10 +33,11 @@ body {
   gap: 15px;
 }
 .card {
-  width: 300px;
+  width: 400px;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
@@ -81,4 +82,21 @@ body {
   background: #4ce0d2;
   font-weight: bold;
   font-size: 15px;
+}
+.signOut {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.signOut button {
+  padding: 15px;
+  width: 150px;
+  font-family: Kanit;
+  border-radius: 15px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 16px;
 }
