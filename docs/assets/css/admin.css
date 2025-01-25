@@ -20,10 +20,9 @@ table {
   color: white;
 }
 table,
-tr,
-th,
-td {
-  border: 1px solid black;
+tr {
+  border: 2px solid black;
+  text-align: center;
 }
 
 .wrapper {
