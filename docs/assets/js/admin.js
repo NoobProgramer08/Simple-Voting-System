@@ -25,6 +25,7 @@ function loadTable(){
         
             
     });
+
     const currencies = [
         { name : "BTC", votecount : btc },
         { name : "ETH", votecount : eth },
@@ -43,7 +44,7 @@ function sortData(currencies){
 }
 
 function handleTable(currencies){
-    let ranking = 0;
+    let ranking = 1;
     currencies.forEach((data) => {
         const newRow = document.createElement('tr');
         newRow.innerHTML =` <td>${ranking++}</td>
