@@ -13,16 +13,21 @@ header {
   font-family: Kanit;
 }
 table {
-  font-family: Kanit;
+  font-family: Fira Code;
 }
 #head {
   background-color: #1f487e;
   color: white;
 }
 table,
-tr {
+tr,
+td,
+th {
   border: 2px solid black;
   text-align: center;
+}
+table {
+  border-collapse: collapse;
 }
 
 .wrapper {

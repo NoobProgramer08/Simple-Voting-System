@@ -24,6 +24,7 @@ function checkBlank(){
 
 
 
+
 function validateUser(){
 
     const users = localStorage.getItem("User");
